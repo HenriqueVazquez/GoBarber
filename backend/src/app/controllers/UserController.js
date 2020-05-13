@@ -26,6 +26,7 @@ class UserController {
       name,
       email,
       provider,
+
     });
   }
 
@@ -50,6 +51,7 @@ class UserController {
     const { email, oldPassword, password } = req.body;
 
     const user = await User.findByPk(req.userId);
+    const id = req.userId;
 
     if (email && email !== user.email) {
       const userExists = await User.findOne({ where: { email } });
@@ -79,7 +81,7 @@ class UserController {
         .json({ Erro: 'Informe sua senha antiga, para poder alterar!' });
     }
 
-    const { id, name, provider } = await user.update(req.body);
+    const { name, provider } = await user.update(req.body);
 
     return res.json({
       id,
