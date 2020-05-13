@@ -26,6 +26,7 @@ class UserController {
       name,
       email,
       provider,
+
     });
   }
 
