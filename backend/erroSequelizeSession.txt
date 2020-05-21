@@ -1,0 +1,439 @@
+{
+  "error": {
+    "message": "password authentication failed for user \"Rick\"",
+    "name": "SequelizeConnectionError",
+    "frames": [
+      {
+        "file": "node_modules\\sequelize\\lib\\dialects\\postgres\\connection-manager.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\dialects\\postgres\\connection-manager.js",
+        "method": null,
+        "line": 182,
+        "column": 24,
+        "context": {
+          "start": 177,
+          "pre": "                break;\n              case 'EINVAL':\n                reject(new sequelizeErrors.InvalidConnectionError(err));\n                break;\n              default:",
+          "line": "                reject(new sequelizeErrors.ConnectionError(err));",
+          "post": "                break;\n            }\n          } else {\n            reject(new sequelizeErrors.ConnectionError(err));\n          }"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\pg\\lib\\client.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\pg\\lib\\client.js",
+        "method": "Connection.connectingErrorHandler",
+        "line": 203,
+        "column": 14,
+        "context": {
+          "start": 198,
+          "pre": "      return\n    }\n    this._connectionError = true\n    clearTimeout(connectionTimeoutHandle)\n    if (callback) {",
+          "line": "      return callback(err)",
+          "post": "    }\n    this.emit('error', err)\n  }\n\n  const connectedErrorHandler = (err) => {"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "events.js",
+        "filePath": "events.js",
+        "method": "Connection.emit",
+        "line": 310,
+        "column": 20,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "domain.js",
+        "filePath": "domain.js",
+        "method": "Connection.EventEmitter.emit",
+        "line": 505,
+        "column": 15,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\pg\\lib\\connection.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\pg\\lib\\connection.js",
+        "method": null,
+        "line": 120,
+        "column": 12,
+        "context": {
+          "start": 115,
+          "pre": "      var msg = self.parseMessage(packet)\n      var eventName = msg.name === 'error' ? 'errorMessage' : msg.name\n      if (self._emitMessage) {\n        self.emit('message', msg)\n      }",
+          "line": "      self.emit(eventName, msg)",
+          "post": "      packet = self._reader.read()\n    }\n  })\n  stream.on('end', function () {\n    self.emit('end')"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "events.js",
+        "filePath": "events.js",
+        "method": "Socket.emit",
+        "line": 310,
+        "column": 20,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "domain.js",
+        "filePath": "domain.js",
+        "method": "Socket.EventEmitter.emit",
+        "line": 505,
+        "column": 15,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "_stream_readable.js",
+        "filePath": "_stream_readable.js",
+        "method": "addChunk",
+        "line": 286,
+        "column": 12,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "_stream_readable.js",
+        "filePath": "_stream_readable.js",
+        "method": "readableAddChunk",
+        "line": 268,
+        "column": 9,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "_stream_readable.js",
+        "filePath": "_stream_readable.js",
+        "method": "Socket.Readable.push",
+        "line": 209,
+        "column": 10,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "internal/stream_base_commons.js",
+        "filePath": "internal/stream_base_commons.js",
+        "method": "TCP.onStreamRead",
+        "line": 186,
+        "column": 23,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\dialects\\postgres\\connection-manager.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\dialects\\postgres\\connection-manager.js",
+        "method": "ConnectionManager.connect",
+        "line": 121,
+        "column": 12,
+        "context": {
+          "start": 116,
+          "pre": "          // Times out queries after a set time in milliseconds. Added in pg v7.3\n          'statement_timeout'\n        ]));\n    }\n",
+          "line": "    return new Promise((resolve, reject) => {",
+          "post": "      let responded = false;\n\n      const connection = new this.lib.Client(connectionConfig);\n\n      const parameterHandler = message => {"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\dialects\\abstract\\connection-manager.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\dialects\\abstract\\connection-manager.js",
+        "method": null,
+        "line": 318,
+        "column": 50,
+        "context": {
+          "start": 313,
+          "pre": "   * @private\n   * @returns {Promise<Connection>}\n   */\n  _connect(config) {\n    return this.sequelize.runHooks('beforeConnect', config)",
+          "line": "      .then(() => this.dialect.connectionManager.connect(config))",
+          "post": "      .then(connection => this.sequelize.runHooks('afterConnect', connection, config).return(connection));\n  }\n\n  /**\n   * Call dialect library to disconnect a connection"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\dialects\\abstract\\connection-manager.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\dialects\\abstract\\connection-manager.js",
+        "method": "ConnectionManager._connect",
+        "line": 318,
+        "column": 8,
+        "context": {
+          "start": 313,
+          "pre": "   * @private\n   * @returns {Promise<Connection>}\n   */\n  _connect(config) {\n    return this.sequelize.runHooks('beforeConnect', config)",
+          "line": "      .then(() => this.dialect.connectionManager.connect(config))",
+          "post": "      .then(connection => this.sequelize.runHooks('afterConnect', connection, config).return(connection));\n  }\n\n  /**\n   * Call dialect library to disconnect a connection"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\dialects\\abstract\\connection-manager.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\dialects\\abstract\\connection-manager.js",
+        "method": "ConnectionManager.getConnection",
+        "line": 254,
+        "column": 46,
+        "context": {
+          "start": 249,
+          "pre": "    let promise;\n    if (this.sequelize.options.databaseVersion === 0) {\n      if (this.versionPromise) {\n        promise = this.versionPromise;\n      } else {",
+          "line": "        promise = this.versionPromise = this._connect(this.config.replication.write || this.config)",
+          "post": "          .then(connection => {\n            const _options = {};\n\n            _options.transaction = { connection }; // Cheat .query to use our private connection\n            _options.logging = () => {};"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\sequelize.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\sequelize.js",
+        "method": null,
+        "line": 640,
+        "column": 36,
+        "context": {
+          "start": 635,
+          "pre": "\n        checkTransaction();\n\n        return options.transaction\n          ? options.transaction.connection",
+          "line": "          : this.connectionManager.getConnection(options);",
+          "post": "      }).then(connection => {\n        const query = new this.dialect.Query(connection, this, options);\n        return this.runHooks('beforeQuery', options, query)\n          .then(() => checkTransaction())\n          .then(() => query.run(sql, bindParameters))"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\sequelize.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\sequelize.js",
+        "method": null,
+        "line": 631,
+        "column": 53,
+        "context": {
+          "start": 626,
+          "pre": "        }\n      };\n\n      const retryOptions = Object.assign({}, this.options.retry, options.retry || {});\n",
+          "line": "      return Promise.resolve(retry(() => Promise.try(() => {",
+          "post": "        if (options.transaction === undefined && Sequelize._cls) {\n          options.transaction = Sequelize._cls.get('transaction');\n        }\n\n        checkTransaction();"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\retry-as-promised\\index.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\retry-as-promised\\index.js",
+        "method": null,
+        "line": 70,
+        "column": 21,
+        "context": {
+          "start": 65,
+          "pre": "        if (backoffTimeout) clearTimeout(backoffTimeout);\n        reject(new TimeoutError(options.name + ' timed out', lastError));\n      }, options.timeout);\n    }\n",
+          "line": "    Promise.resolve(callback({ current: options.$current }))",
+          "post": "      .then(resolve)\n      .then(function() {\n        if (timeout) clearTimeout(timeout);\n        if (backoffTimeout) clearTimeout(backoffTimeout);\n      })"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\retry-as-promised\\index.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\retry-as-promised\\index.js",
+        "method": "retryAsPromised",
+        "line": 60,
+        "column": 10,
+        "context": {
+          "start": 55,
+          "pre": "  };\n\n  if (!Array.isArray(options.match)) options.match = [options.match];\n  options.report('Trying ' + options.name + ' #' + options.$current + ' at ' + new Date().toLocaleTimeString(), options);\n",
+          "line": "  return new Promise(function(resolve, reject) {",
+          "post": "    var timeout, backoffTimeout, lastError;\n\n    if (options.timeout) {\n      timeout = setTimeout(function() {\n        if (backoffTimeout) clearTimeout(backoffTimeout);"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\sequelize.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\sequelize.js",
+        "method": null,
+        "line": 631,
+        "column": 30,
+        "context": {
+          "start": 626,
+          "pre": "        }\n      };\n\n      const retryOptions = Object.assign({}, this.options.retry, options.retry || {});\n",
+          "line": "      return Promise.resolve(retry(() => Promise.try(() => {",
+          "post": "        if (options.transaction === undefined && Sequelize._cls) {\n          options.transaction = Sequelize._cls.get('transaction');\n        }\n\n        checkTransaction();"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\sequelize.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\sequelize.js",
+        "method": "Sequelize.query",
+        "line": 580,
+        "column": 23,
+        "context": {
+          "start": 575,
+          "pre": "      //if user wants to always prepend searchPath (dialectOptions.preprendSearchPath = true)\n      //then set to DEFAULT if none is provided\n      options.searchPath = 'DEFAULT';\n    }\n",
+          "line": "    return Promise.try(() => {",
+          "post": "      if (typeof sql === 'object') {\n        if (sql.values !== undefined) {\n          if (options.replacements !== undefined) {\n            throw new Error('Both `sql.values` and `options.replacements` cannot be set at the same time');\n          }"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\query-interface.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\query-interface.js",
+        "method": "QueryInterface.select",
+        "line": 1121,
+        "column": 27,
+        "context": {
+          "start": 1116,
+          "pre": "  }\n\n  select(model, tableName, optionsArg) {\n    const options = Object.assign({}, optionsArg, { type: QueryTypes.SELECT, model });\n",
+          "line": "    return this.sequelize.query(",
+          "post": "      this.QueryGenerator.selectQuery(tableName, options, model),\n      options\n    );\n  }\n"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\model.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\model.js",
+        "method": null,
+        "line": 1757,
+        "column": 34,
+        "context": {
+          "start": 1752,
+          "pre": "      if (options.hooks) {\n        return this.runHooks('beforeFindAfterOptions', options);\n      }\n    }).then(() => {\n      const selectOptions = Object.assign({}, options, { tableNames: Object.keys(tableNames) });",
+          "line": "      return this.QueryInterface.select(this, this.getTableName(selectOptions), selectOptions);",
+          "post": "    }).tap(results => {\n      if (options.hooks) {\n        return this.runHooks('afterFind', results, options);\n      }\n    }).then(results => {"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "domain.js",
+        "filePath": "domain.js",
+        "method": "bound",
+        "line": 426,
+        "column": 14,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "domain.js",
+        "filePath": "domain.js",
+        "method": "runBound",
+        "line": 439,
+        "column": 12,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "internal/timers.js",
+        "filePath": "internal/timers.js",
+        "method": "processImmediate",
+        "line": 456,
+        "column": 21,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "domain.js",
+        "filePath": "domain.js",
+        "method": "process.topLevelDomainCallback",
+        "line": 137,
+        "column": 15,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\model.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\model.js",
+        "method": "Function.findAll",
+        "line": 1755,
+        "column": 8,
+        "context": {
+          "start": 1750,
+          "pre": "      options = this._paranoidClause(this, options);\n\n      if (options.hooks) {\n        return this.runHooks('beforeFindAfterOptions', options);\n      }",
+          "line": "    }).then(() => {",
+          "post": "      const selectOptions = Object.assign({}, options, { tableNames: Object.keys(tableNames) });\n      return this.QueryInterface.select(this, this.getTableName(selectOptions), selectOptions);\n    }).tap(results => {\n      if (options.hooks) {\n        return this.runHooks('afterFind', results, options);"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "node_modules\\sequelize\\lib\\model.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\node_modules\\sequelize\\lib\\model.js",
+        "method": "Function.findOne",
+        "line": 1924,
+        "column": 17,
+        "context": {
+          "start": 1919,
+          "pre": "        options.limit = 1;\n      }\n    }\n\n    // Bypass a possible overloaded findAll.",
+          "line": "    return this.findAll(_.defaults(options, {",
+          "post": "      plain: true\n    }));\n  }\n\n  /**"
+        },
+        "isModule": true,
+        "isNative": false,
+        "isApp": false
+      },
+      {
+        "file": "src\\app\\controllers\\SessionController.js",
+        "filePath": "C:\\Users\\Rick\\Documents\\Rocketseat\\bootCamp\\modulo03\\gobarber\\backend\\src\\app\\controllers\\SessionController.js",
+        "method": "store",
+        "line": 19,
+        "column": 39,
+        "context": {
+          "start": 14,
+          "pre": "      return res.status(400).json({ Erro: 'Falha na validação' });\n    }\n\n    const { email, password } = req.body;\n",
+          "line": "    const user = await User.findOne({ where: { email } });",
+          "post": "\n    if (!user) {\n      return res.status(401).json({ Erro: 'Usuário não localizado' });\n    }\n"
+        },
+        "isModule": false,
+        "isNative": false,
+        "isApp": true
+      },
+      {
+        "file": "internal/process/task_queues.js",
+        "filePath": "internal/process/task_queues.js",
+        "method": "processTicksAndRejections",
+        "line": 97,
+        "column": 5,
+        "context": {},
+        "isModule": false,
+        "isNative": true,
+        "isApp": false
+      }
+    ]
+  }
+}
